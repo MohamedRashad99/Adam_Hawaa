@@ -67,7 +67,7 @@ class Adam7waa extends StatelessWidget {
             theme: state.theme,
 
             title: 'Flutter Theme Cubit',
-            home: const SignUp(),
+            home: const SignIn(),
           );
         },
       ),

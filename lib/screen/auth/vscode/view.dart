@@ -29,8 +29,10 @@ class VSCode extends StatelessWidget {
                 padding:
                 const EdgeInsetsDirectional.only(top: 8.0, bottom: 8.0),
                 child: customRigulerText(
-                    title: "أدخل الكود المرسل علي بريدك الالكتروني لتفعيل الحساب"),
+                    title: "فعل حسابك الاّن"),
               ),
+              customRigulerText(
+                  title: "أدخل الكود المرسل علي بريدك الإلكتروني لتفعيل حسابك"),
               CustomTextField(
                 dIcon: Icons.drive_file_rename_outline,
                 hint: "أدحل الكود هنا",
@@ -49,7 +51,7 @@ class VSCode extends StatelessWidget {
               CustomButton(
                 color: kBlackText,
                 title: "تاكيد",
-                onPressed: () {},
+                onPressed: ()=>showAlertCongratulationDialog(context),
               ),
               SizedBox(
                 height: height * 0.1,

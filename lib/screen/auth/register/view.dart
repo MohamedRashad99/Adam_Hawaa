@@ -1,13 +1,23 @@
+import 'package:adam_and_eve/screen/auth/vscode/view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:queen/validation.dart';
 
 import '../../../widgets/appBar.dart';
 import '../../../widgets/constants.dart';
 import '../../../widgets/customButton.dart';
 import '../../../widgets/customTextFeild.dart';
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+
+
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -157,11 +167,26 @@ class SignUp extends StatelessWidget {
                 ]),
                 type: TextInputType.text,
               ),
+              ListTile(
 
+                title: Text("أوافق علي كل الشروط والاحكام".tr, style:  const TextStyle(
+                    color: kBlackText, fontSize: 14, fontFamily: 'DinReguler'
+                )),
+                leading:  Checkbox(
+
+                  activeColor: kBlackText,
+                  value: value,
+                  onChanged: ( value) {
+                    setState(() {
+                      this.value = value!;
+                    });
+                  },
+                ),
+              ),
               CustomButton(
                 color: kBlackText,
                 title: "إنشاء حساب جديد",
-                onPressed: () {},
+                onPressed: ()=>Get.to(()=>const VSCode()) ,
               ),
               CustomButton(
                 color: kBlackText,

@@ -1,9 +1,12 @@
+import 'package:adam_and_eve/screen/auth/forget_password/view.dart';
+import 'package:adam_and_eve/screen/auth/register/view.dart';
 import 'package:adam_and_eve/screen/splash/view.dart';
 import 'package:adam_and_eve/widgets/constants.dart';
 import 'package:adam_and_eve/widgets/customButton.dart';
 import 'package:adam_and_eve/widgets/customTextFeild.dart';
 import 'package:adam_and_eve/widgets/donotHave.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:queen/validation.dart';
 
 import '../../../widgets/appBar.dart';
@@ -30,7 +33,7 @@ class SignIn extends StatelessWidget {
               Image.asset("assets/image/LogoN.png"),
               Padding(
                 padding:
-                    const EdgeInsetsDirectional.only(top: 8.0, bottom: 8.0),
+                const EdgeInsetsDirectional.only(top: 8.0, bottom: 8.0),
                 child: customRigulerText(
                     title: "سجل دخولك الان واستمع بستخدام كامل للتطبيق"),
               ),
@@ -62,17 +65,24 @@ class SignIn extends StatelessWidget {
               ),
               DoNotHave(
                   text: "أضغط هنا",
-                  route: () => const SplashScreen(),
+                  route: () =>  showAlertNoAccountDialog(context , ()=>const ForgetPassword()),
                   have: "نسيت كلمة المرور ؟  "),
               CustomButton(
                 color: kBlackText,
                 title: "تسجيل دخول",
-                onPressed: () {},
+                onPressed: () {
+
+
+                  /// TODO :: Home Page
+                },
               ),
               CustomButton(
                 color: kBlackText,
                 title: "ليس لديك حساب ؟ إنشاء حساب",
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(()=>const SignUp());
+
+                },
               ),
               SizedBox(
                 height: height * 0.1,

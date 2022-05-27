@@ -1,11 +1,16 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:io';
+import 'package:adam_and_eve/screen/auth/forget_password/view.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:queen/core/helpers/prefs.dart';
+import 'package:queen/validation.dart';
+
+import 'customButton.dart';
+import 'customTextFeild.dart';
 
 const kPrimaryColor = Color(0xFF258270);
 
@@ -131,6 +136,81 @@ void showAlertDialog(BuildContext context , VoidCallback onTap) {
               },
               child:  Text("no".tr)
           ),
+        ],
+      ));
+}
+
+
+void showAlertNoAccountDialog(BuildContext context , VoidCallback onTap) {
+
+  showCupertinoModalPopup<void>(
+
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+
+
+        title:  Image.asset("assets/image/popmail.png"),
+        content: Column(
+          children:  [
+            const Text( "استراجاع كلمة المرور"),
+            customRigulerText(title: " أدخل بريدك الالكتروني لارسال كوداستراجاع كلمة المرور"),
+
+
+          ],
+        ),
+        actions: <Widget>[
+
+          Card(
+
+            color: Colors.transparent,
+            child: CustomTextField(
+              dIcon: Icons.email,
+              hint: "البريد الالكتروني",
+              // controller: _emailController,
+              label: "البريد الالكتروني",
+              validator: qValidator([
+                IsRequired("enterEmail"),
+                IsOptional(),
+                const IsEmail("MustBeEmail"),
+                MaxLength(30),
+              ]),
+              type: TextInputType.emailAddress,
+            ),
+          ),
+          Card(
+
+            color: Colors.transparent,
+            child: CustomButton(
+              color: kBlackText,
+              title: "إرسال كود الإسترجاع",
+              onPressed: onTap
+            ),
+          ),
+
+        ],
+      ));
+}
+void showAlertCongratulationDialog(BuildContext context ) {
+
+  showCupertinoModalPopup<void>(
+
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+
+
+        title:  Image.asset("assets/image/checked.png"),
+        content: Column(
+          children:  [
+            const Text( "تهانينا"),
+            customRigulerText(title: "تم تفعيل حسابك بنجاح يمكنك أستخدام التطبيق الان"),
+
+
+          ],
+        ),
+        actions: <Widget>[
+
+
+
         ],
       ));
 }
