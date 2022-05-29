@@ -1,8 +1,5 @@
-import 'package:adam_and_eve/screen/auth/forget_password/view.dart';
-import 'package:adam_and_eve/screen/auth/register/view.dart';
-import 'package:adam_and_eve/screen/auth/sign_in/view.dart';
-import 'package:adam_and_eve/screen/auth/vscode/view.dart';
-import 'package:adam_and_eve/screen/splash/view.dart';
+
+import 'package:adam_and_eve/screens/button_navigation_bar_items/view.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,7 +12,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:queen/queen.dart';
 
 import 'config/bloc_observer.dart';
-import 'config/routes/path.dart';
 import 'config/themes/theme_cubit/switch_cubit.dart';
 import 'config/themes/theme_cubit/switch_state.dart';
 
@@ -67,7 +63,7 @@ class Adam7waa extends StatelessWidget {
             theme: state.theme,
 
             title: 'Flutter Theme Cubit',
-            home: const SignIn(),
+            home:  const HomeTabBarScreen(index: 0,),
           );
         },
       ),

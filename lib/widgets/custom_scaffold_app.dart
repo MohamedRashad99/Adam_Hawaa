@@ -1,7 +1,7 @@
 import 'package:adam_and_eve/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../screen/drawer/view.dart';
+import '../screens/drawer/view.dart';
 import 'appBar.dart';
 class CustomScaffold extends StatelessWidget {
    CustomScaffold({Key? key,required this.body}) : super(key: key);

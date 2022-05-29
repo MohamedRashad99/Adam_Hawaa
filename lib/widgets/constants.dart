@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:io';
-import 'package:adam_and_eve/screen/auth/forget_password/view.dart';
+import 'package:adam_and_eve/screens/auth/forget_password/view.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +38,9 @@ const kIcon = Color(0xFF74572F);
 const kButtonGreenDark = Color(0xFF008000);
 const kButtonRedDark = Color(0xFFC50B0B);
 const Color kHomeColor = Color(0xFFFFFFFF);
+const Color kShadowColor = Color(0xFF4A401A);
+const Color kShadow2Color = Color(0xFFEC4399);
+
 const Color kRoundColor = Color(0xFFFEBD2F);
 const Color kLightText = Color(0xFF484848);
 const Color kBlackText = Color(0xFF1D1D1B);
